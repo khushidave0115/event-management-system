@@ -1,3 +1,4 @@
+
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from . import models, database
@@ -5,7 +6,7 @@ from .routes import users, events
 
 models.Base.metadata.create_all(bind=database.engine)
 
-app = FastAPI(title="Event Management API (Fixed)")
+app = FastAPI(title="Event Management API (Tailwind)")
 
 app.add_middleware(
     CORSMiddleware,

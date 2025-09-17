@@ -1,12 +1,13 @@
+
 import React from 'react';
 
 export default function EventCard({event}) {
   return (
     <div className="card">
-      <img src={event.image_url || 'https://via.placeholder.com/600x200'} alt={event.title} style={{width:'100%', height:200, objectFit:'cover', borderRadius:6}} />
-      <h3>{event.title}</h3>
-      <p style={{color:'#555'}}>{event.date} • {event.time}</p>
-      <p>{event.description}</p>
+      <img src={event.image_url || 'https://via.placeholder.com/800x300'} alt={event.title} className="w-full h-48 object-cover rounded-md mb-3" />
+      <h3 className="text-xl font-semibold">{event.title}</h3>
+      <p className="text-sm text-slate-600">{event.date} • {event.time}</p>
+      <p className="mt-2 text-slate-700">{event.description}</p>
     </div>
   );
 }

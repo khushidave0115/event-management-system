@@ -1,3 +1,4 @@
+
 import React, {useState} from 'react';
 import API from '../api';
 import { useNavigate } from 'react-router-dom';
@@ -18,18 +19,18 @@ export default function Login(){
       localStorage.setItem('role', res.data.user.role);
       nav('/');
     } catch (err) {
-      alert('Login failed');
+      alert('Login failed: ' + (err.response?.data?.detail || err.message));
     }
   };
 
   return (
-    <div style={{maxWidth:400, margin:'20px auto'}}>
+    <div className="max-w-md mx-auto">
       <div className="card">
-        <h3>Login</h3>
-        <form onSubmit={submit}>
-          <input required placeholder="Email" value={email} onChange={e=>setEmail(e.target.value)} style={{width:'100%', padding:8, marginBottom:8}} />
-          <input required type="password" placeholder="Password" value={password} onChange={e=>setPassword(e.target.value)} style={{width:'100%', padding:8, marginBottom:8}} />
-          <button style={{background:'#0b5fff', color:'white', padding:'8px 12px'}}>Login</button>
+        <h3 className="text-xl font-semibold mb-3">Login</h3>
+        <form onSubmit={submit} className="space-y-3">
+          <input required placeholder="Email" value={email} onChange={e=>setEmail(e.target.value)} className="w-full p-2 border rounded" />
+          <input required type="password" placeholder="Password" value={password} onChange={e=>setPassword(e.target.value)} className="w-full p-2 border rounded" />
+          <button className="bg-blue-600 text-white px-4 py-2 rounded">Login</button>
         </form>
       </div>
     </div>
