@@ -6,10 +6,10 @@ Designed to help manage events, users, and admin operations efficiently.
 ---
 
 ⚡ Tech Stack
-- Frontend:** React (Create React App)  
-- Backend:** FastAPI (Python)  
-- Database:** SQLite (default) → Supports PostgreSQL via `DATABASE_URL`  
-- Package Manager:** npm / pip  
+- Frontend: React (Create React App)  
+- Backend: FastAPI (Python)  
+- Database: SQLite (default) → Supports PostgreSQL via `DATABASE_URL`  
+- Package Manager: npm / pip  
 
 
 
@@ -28,5 +28,5 @@ venv\Scripts\activate
 Install dependencies
 pip install -r requirements.txt
 
-# Start FastAPI server
+Start FastAPI server
 uvicorn app.main:app --reload
